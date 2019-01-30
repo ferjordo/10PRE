@@ -1,0 +1,301 @@
+/*----------  libraries
+------------------------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700);
+html, body, div, span, applet, object, iframe,
+ h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer,  hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*----------  style
+------------------------------------------------------------------------------*/
+* {
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing:inherit;
+}
+
+body {
+  position: relative;
+  background-color: #ffffff;
+  font-family: 'Karla', sans-serif;
+}
+body .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 15px 0;
+}
+body .wrapper a {
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+header {
+     margin-left: -200px;
+     margin-bottom: 0px;
+    background:url(images/header1.png) no-repeat;
+ }
+header a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 0 0px;
+}
+header img {
+  border: none;
+}
+
+header a:hover, header a.active {
+  color: #fdc6a0;
+}
+header .logo {
+  display: inline-block;
+  
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 0px;
+}
+header .logo span {
+  padding-left: 0px;
+}
+header .logo img {
+  position:fixed;
+}
+header nav ul {
+  display: inline-block;
+  float: right;
+}
+header nav ul li {
+  float: left;
+  position: relative;
+}
+header nav ul li.dd ul li {
+  float: left;
+  display: block;
+  clear: left;
+  position: relative;
+}
+header nav ul li.dd ul li:not(:first-of-type) {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  line-height: 20px;
+}
+header nav ul li.dd:hover ul li {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+header nav ul li.search input {
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 25px;
+  top: -2px;
+  border: 0;
+  background-color: #263238;
+  border-bottom: 1px solid #263238;
+  padding-bottom: 3px;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+header nav ul li.search input::-webkit-input-placeholder {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Karla', sans-serif;
+}
+header nav ul li.search input:-moz-placeholder {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Karla', sans-serif;
+}
+header nav ul li.search input::-moz-placeholder {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Karla', sans-serif;
+}
+header nav ul li.search input:-ms-input-placeholder {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Karla', sans-serif;
+}
+header nav ul li.search input:focus {
+  outline: none;
+}
+header nav ul li.search input::-webkit-search-cancel-button {
+  display: none;
+}
+header nav ul li.search.active input {
+  width: 423px;
+  border-color: #fff;
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+.buttonreg {
+  
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  height: 2.5rem;
+  padding-top: 1.3rem;
+  width: 15rem;
+  text-align: center;
+  color: #70B7D1;
+  border: #70B7D1 solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.buttoncons {
+  
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  height: 2.5rem;
+  padding-top: 1.3rem;
+  width: 15rem;
+  text-align: center;
+  color: #70B7D1;
+  border: #70B7D1 solid 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.split.left .button:hover {
+  background-color: var(--left-button-hover-color);
+  border-color: var(--left-button-hover-color);
+}
+
+.split.right .button:hover {
+  background-color: var(--right-button-hover-color);
+  border-color: var(--right-button-hover-color);
+}
+
+.container {
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+}
+
+.split {
+  position:inherit;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+    padding-top: 0;
+}
+
+.split.left {
+  left:0;
+  
+}
+
+.split.left:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--left-bg-color);
+}
+
+.split.right {
+  right:0;
+  
+}
+
+.split.right:before {
+  position:absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--right-bg-color);
+}
+
+.split.left, .split.right, .split.right:before, .split.left:before {
+  transition: var(--speed) all ease-in-out;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:  #70B7D1;
+  color: white;
+  padding-top: 10px;
+  text-align: center;
+    height: 60px;
+}

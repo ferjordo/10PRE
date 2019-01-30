@@ -1,0 +1,282 @@
+/*----------  libraries
+------------------------------------------------------------------------------*/
+
+@import "compass";
+@import "compass/reset";
+
+/*----------  style
+------------------------------------------------------------------------------*/
+
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700);
+$white: #fff;
+$black: #000;
+$grey: #999999;
+$bg: #263238;
+$imgbg: #2f3e45;
+$orange: #fdc6a0;
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content;}
+	&:-moz-placeholder {@content;}
+	&::-moz-placeholder {@content;}
+	&:-ms-input-placeholder {@content;}
+}
+
+@mixin calc($prop, $val) {
+  @each $pre in -webkit-, -moz- {
+    #{$prop}: $pre + calc(#{$val});
+  }
+  #{$prop}: calc(#{$val});
+}
+
+* {@include box-sizing(border-box);}
+
+body {
+	position: relative;
+	background-color: $bg;
+	font-family: 'Karla', sans-serif;
+	.wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 35px 15px 0;
+		a {
+			@include transition(all 0.2s);
+		}
+	}
+}
+header {
+	width: 100%;
+	float: left;
+	a {
+		text-decoration: none;
+		color: $white;
+		text-transform: uppercase;
+		font-size: 12px;
+		padding: 0 17px;
+		&:hover, &.active {
+			color: #fdc6a0;
+		}
+	}
+	.logo {
+		display: inline-block;
+		float: left;
+		text-transform: uppercase;
+		color: $white;
+		line-height: 15px;
+		span {
+			padding-left: 20px;
+		}
+		img {
+			position: absolute;
+		}
+	}
+	nav {
+		ul {
+			display: inline-block;
+			float: right;
+			li {
+				float: left;
+				position: relative;
+				&.dd {
+					ul {
+						li {
+							float: left;
+							display: block;
+							clear: left;
+							position: relative;
+							&:not(:first-of-type) {
+								@include opacity(0);
+								@include transition(all 0.2s);
+								line-height: 20px;
+							}
+						}
+					}
+					&:hover {
+						ul {
+							li {
+								@include opacity(1);
+							}
+						}
+					}
+				}
+				&.search {
+					input {
+						position: absolute;
+						right: 0;
+						width: 0;
+						height: 25px;
+						top: -2px;
+						border: 0;
+						background-color: $bg;
+						border-bottom: 1px solid $bg;
+						padding-bottom: 3px;
+						color: $white;
+						font-family: 'Karla', sans-serif;
+						@include opacity(0);
+						@include transition(all 0.3s);
+						@include placeholder {
+							text-transform: uppercase;
+							color: $white;
+							font-size: 12px;
+							font-family: 'Karla', sans-serif;
+						}
+						&:focus {
+							outline: none;
+						}
+						&::-webkit-search-cancel-button {
+						  display: none;
+						}
+					}
+					&.active {
+						input {
+							width: 423px;
+							border-color: $white;
+							@include opacity(1);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.slider {
+	@include transition(all 0.4s);
+    width: 100%;
+    float: left;
+    margin-top: 17.7vh;
+    padding-left: 5%;
+    overflow: hidden;
+		.slide {
+			width: 100%;
+			float: left;
+			@include transition (all .0s);
+			@include opacity(0);
+			&.active {
+				@include opacity(1);
+				.part {
+					position: relative;
+					float: left;
+					height: 51vh;
+					&.title {
+						@include transition(all 1s);
+						margin: 0;
+						width: 25%;
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -ms-flexbox;
+						display: flex;
+						-webkit-box-align: center;
+						-webkit-align-items: center;
+						-ms-flex-align: center;
+						align-items: center;
+					}
+					&.image {
+						width: 48%;
+					}
+					&.description {
+						margin: 0;
+						width: 27%;
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -ms-flexbox;
+						display: flex;
+						-webkit-box-align: center;
+						-webkit-align-items: center;
+						-ms-flex-align: center;
+						align-items: center;
+					}
+					h2 {
+						font-size: 36px;
+						color: $white;
+					}
+					img {
+						display: block;
+						margin: 0 auto;
+						height: 100%;
+						width: auto;
+					}
+					.description-wrap {
+						width: 100%;
+						display: block;
+						float: left;
+						p {
+							max-width: 340px;
+							color: $grey;
+							font-size: 14px;
+							text-align: left;
+							line-height: 20px;
+							display: block;
+							margin-bottom: 30px;
+							span {
+								font-weight: 700;
+								color: $orange;
+							}
+						}
+						.btn {
+							display: block;
+							clear:left;
+							border: 1px solid $orange;
+							height: 42px;
+							width: 130px;
+							line-height: 42px;
+							font-size: 14px;
+							@include border-radius(21px);
+							text-align: center;
+							text-transform: lowercase;
+							color: $white;
+							text-decoration: none;
+							&:hover {
+								color: $orange;
+							}
+						}
+					}
+				}
+			}
+			.part {
+				&.title {
+					margin-left: -500px;
+				}
+			}
+		}
+		.slider-nav {
+			float: left;
+			width: 100%;
+			margin-top: 8.8vh;
+			text-align: center;
+			display: block;
+			a {
+				display: inline-block;
+				color: $orange;
+				text-decoration: none;
+				&.prev {
+					padding-right: 25px;
+				}
+				&.next {
+					padding-left: 25px;
+				}
+				&:hover {
+					color: $white;
+				}
+			}
+			span {
+				color: $white;
+				font-size: 17px;
+			}
+		}
+}
+.down {
+	padding: 50px 0 0 5%;
+	display: block;
+	width: 100%;
+	float: left;
+	text-align: center;
+	a {
+		margin-top: 40px;
+		color: $orange;
+		padding: 15px;
+		text-decoration: none;
+		&:hover {
+			color: $white;
+		}
+	}
+}
